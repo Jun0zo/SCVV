@@ -1,0 +1,143 @@
+* {
+	margin:0;
+	padding:0;
+	-webkit-touch-callout: none;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+div {
+	display: block;
+}
+
+.mainPage h3 {
+	font-size:50px;
+}
+
+.mainPage p {
+	font-size:20px;
+	max-width: 600px;
+	margin:25px auto;
+}
+
+#menu-header {
+	background-color: #1a2235;
+	position: fixed;
+	width:100%;
+	border-bottom:solid 1px #292C41;
+}
+
+#menu-header .icon {
+	margin:0 20px;
+	margin-left: 40px;
+	color:yellow;
+	cursor:pointer;
+	font-weight: 800;
+	font-size:35px;
+}
+
+#menu-header .menus {
+	font-weight: 500;
+	font-size:20px;
+}
+
+.menus .menu-item {
+	display: inline-block;
+	margin-right:15px;
+	cursor: pointer;
+	color: #9d9d9d;
+	line-height: 60px;
+}
+
+.menus .menu-item:hover:not(.icon){
+	color: red;
+	border-bottom:solid 0.6px red;
+	transition: color;
+}
+
+.menus .login {
+
+}
+
+.mainPage {
+	text-align: center;
+}
+
+.mainPage .intro {
+	padding:7em 0px;
+	color:white;
+	background-color: #1a2235;
+}
+
+.intro .goto-button {
+	background-color: #5ec3eb;  /* blue color */
+	display: inline-block;
+	padding : 1em 3em;
+	font-weight: 800;
+	font-size:14px;
+	cursor: pointer;
+	transition: background-color 1s;
+}
+
+.goto-button:hover{
+	background-color: #abe1f5;
+	color:black;
+	transition: background, color;
+	transition-duration: 1s;
+}
+
+.mainPage .creators {
+
+}
+
+.select {
+	padding-bottom: 30px;
+}
+
+.select .arrow {
+	position: relative;
+	bottom:50px;
+	font-size:40px;
+	font-weight:800;
+	margin:0 30px;
+	color:black;
+	cursor:pointer;
+}
+
+.select h3{
+	font-size:30px;
+	color:yellow;
+	margin-bottom:20px;
+}
+
+.select div {
+	display: inline-block;
+	table-layout: middle;
+}
+
+
+.creators {
+	background-image:radial-gradient( circle farthest-side at top center, #61429a 0%, #46387f 15%, #2f2e64 40%, #1d2248 65%, #10162D 100% );
+	width:100%;
+	padding: 7em 0;
+}
+
+.creators .member_list {
+	padding: 5em 0;
+}
+
+.member_list .member {
+	display: inline-block;
+	margin: 0 30px;
+	color:#5ec3eb;
+	font-size:20px;
+}
+
+.member img{
+	display: block;
+	margin-bottom: 10px;
+
+}
+
