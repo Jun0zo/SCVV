@@ -1,19 +1,44 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
-<head>
-    <title></title>
-    <script src="cm/lib/codemirror.js"></script>
-    <script src="cm/mode/clike/clike.js"></script>
-    <script src="cm/mode/javascript/javascript.js"></script>
-    <script src="cm/addon/edit/matchbrackets.js"></script>
-    
-    <script src="editorjs.js"></script>
 
-    <link rel="stylesheet" href="cm/lib/codemirror.css">
-    <link rel="stylesheet" href="cm/theme/duotone-dark.css">
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GCA</title>
+    <link rel="stylesheet" href="node_modules/xterm/css/xterm.css" />
+    <script src="node_modules/xterm/lib/xterm.js"></script>
+    <script src="./js/monaco/loader.js"></script>
+    <script src="./js/monaco/tsWorker.js"></script>
 </head>
 <body>
-    <textarea id="editor" width="400px;">int a = 10;</textarea>
+    <div id="container" style="width: 600px; height: 900px; border: 1px solid gray; display: inline-block;"></div>
+    <div id="terminal" style="display: inline-block;"></div>
+    <script>
+        require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.18.0/min/vs/' }});
+
+        require(["vs/editor/editor.main"], function () {
+            var editor = monaco.editor.create(document.getElementById('container'), {
+                value: [
+                    '#include<stdio.h>\n',
+                    'int main() {',
+                    '\tprintf("Hello world!");',
+                    '}'
+                ].join('\n'),
+                language: 'cpp',
+                theme: 'vs-dark'
+            });
+        });
+
+        var term = new Terminal({
+            cursorBlink:'true',
+            rows:53,
+            cols:85,
+            screenKeys:'true'
+        });
+        term.open(document.getElementById('terminal'));
+        term.write('clang version 7.0.0-3~ubuntu0.18.04.1 (tags/RELEASE_700/final) \n\r $ ');
+    </script>
 </body>
 </html>
